@@ -55,8 +55,6 @@ const Page: React.FC = async () => {
                     <div className='grid grid-cols-2 gap-8'>
                         <DashBox title="Investment" totalMoney={userData.user.totalInv === "0" ? 0 : parseInt(userData.user.totalInv)} />
                         <DashBox title="Savings" totalMoney={userData.user.totalSav === "0" ? 0 : parseInt(userData.user.totalSav)} />
-                        <BarChart investmentAmount={investmentAmount} />
-                        <DonughtChart membersName={membersNames} membersInv={membersInvestments} />
                     </div>
                     <Members />
                 </div>
