@@ -33,9 +33,17 @@ export const AddInvestmentModal = () => {
 
         startTransition(() => {
             addInvestment({amount, type, invName, riskFactor, returnFactor, familyMemberName})
-            .then(() => {
-                toast.success("Investment Added")
-                close();
+            .then((success) => {
+                if(success==="nosaving"){
+                    toast.error("Low Savings!!!")
+                }
+                else if(success==="notexist"){
+                    toast.error("Member Not exists!!!")
+                }
+                else{
+                    toast.success("Investment Added");
+                    close();
+                }
             })
             .catch(() => toast.error("Something went wrong"));
         });

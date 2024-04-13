@@ -16,7 +16,7 @@ export const BarChart = ({
     const backgroundColors = "rgba(79, 229, 74, 0.8)";
     return(
         <div>
-            <div className="flex items-center font-semibold text-lg text-neutral-700">
+            <div className="flex items-center text-center justify-center font-semibold text-lg text-neutral-700 mb-4">
                 <BarChartBig className="h-6 w-6 mr-2" />
                 Investment Chart
             </div>

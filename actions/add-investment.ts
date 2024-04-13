@@ -25,9 +25,31 @@ export const addInvestment = async ({
 
     const {userId} = await auth();
     const user = await currentUser();
+    let success="notexist";
 
-    if(!userId || !user) return null;
- 
+    if(!userId || !user) return success;
+
+    const memberExists = await db.family.findUnique({
+        where:{
+            userId,
+            name:familyMemberName
+        }
+    });
+
+    if(!memberExists) return success;
+
+    const prevInv = await db.user.findUnique({
+        where: {
+            userId
+        },
+        select: {
+            totalInv: true,
+            totalSav:true
+        }
+    });
+
+    success="nosaving"
+    if(prevInv && parseInt(prevInv.totalSav) < parseInt(amount) ) return success;
 
     const newInvestment = await db.investment.create({
         data: {
@@ -40,15 +62,10 @@ export const addInvestment = async ({
             familyMemberName
         }
     });
+    success="success"
+    console.log(success);
+
     
-    const prevInv = await db.user.findUnique({
-        where: {
-            userId
-        },
-        select: {
-            totalInv: true
-        }
-    });
 
     let totalInvAfterUpdate = 0;
     if(prevInv){
@@ -95,5 +112,5 @@ export const addInvestment = async ({
     revalidatePath("/");
     revalidatePath("/dash-board");
 
-    return {newInvestment};
+    return {success};
 }

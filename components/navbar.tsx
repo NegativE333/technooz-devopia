@@ -1,37 +1,53 @@
 import Link from "next/link"
 import { Button } from "./ui/button"
 import { auth, UserButton } from "@clerk/nextjs"
-import {Cabin, Raleway} from "next/font/google"
+import { Raleway } from "next/font/google"
 import { cn } from "@/lib/utils";
-const font = Raleway({subsets:["latin"]});
+import Image from "next/image";
+const font = Raleway({ subsets: ["latin"] });
 
 export const Navbar = async () => {
 
-    const {userId} = await auth();
+    const { userId } = await auth();
 
-    return(
-        <div className="fixed h-16 w-full border-b border-black flex items-center p-2 px-16 ">
-            <h1 className={cn("text-xl", font.className)}>
-                <b>Wealth Wise</b>
-            </h1>
-
+    return (
+        <div className="fixed h-16 w-full border-b border-black flex items-center p-2 px-16 z-10 bg-white ">
+            <Link href="/"> <Image
+                unoptimized
+                src="/MoneyCare.png"
+                alt="logo"
+                height={100}
+                width={110}
+            /> </Link>
             {!userId ? (
                 <div className="ml-auto flex gap-2">
-                <Button className="transition ease-in-out delay-10 hover:translate-y-1 hover:scale-110 hover:bg-black duration-30 ...">
-                    <Link href="/sign-in">
-                        Sign In
-                    </Link>
-                </Button>
-                <Button className="transition ease-in-out delay-10 hover:translate-y-1 hover:scale-110 hover:bg-black duration-30 ...">
-                    <Link href="/sign-up">
-                        Sign Up
-                    </Link>
-                </Button>
-            </div>
-
-            ): (
-                <div className="ml-auto">
-                    <UserButton afterSignOutUrl="/"/>
+                    <Button className="transition ease-in-out delay-10 hover:translate-y-1 hover:scale-110 hover:bg-black duration-30 ...">
+                        <Link href="/sign-in">
+                            Sign In
+                        </Link>
+                    </Button>
+                    <Button className="transition ease-in-out delay-10 hover:translate-y-1 hover:scale-110 hover:bg-black duration-30 ...">
+                        <Link href="/sign-up">
+                            Sign Up
+                        </Link>
+                    </Button>
+                </div>
+            ) : (
+                <div className="w-full flex ml-16">
+                    <div className="flex gap-8 font-semibold">
+                        <Link href="/investment" className="text-lg">
+                            Investments
+                        </Link>
+                        <Link href="/savings" className="text-lg">
+                            Savings
+                        </Link>
+                        <Link href="/analytics" className="text-lg">
+                            Analytics
+                        </Link>
+                    </div>
+                    <div className="ml-auto">
+                        <UserButton afterSignOutUrl="/" />
+                    </div>
                 </div>
             )}
         </div>
