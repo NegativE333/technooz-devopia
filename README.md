@@ -35,6 +35,16 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+ 
 
+<<<<<<< HEAD
 //dummy dummy
 //commit prathamesh
+=======
+git checkout -b {branchName}
+git pull {url}
+git add .
+git commit -m ""
+git push
+git push --set-upstream origin {branchName} ("ONLY IF ERROR IN GIT PUSH")
+>>>>>>> 85dfa2d9d69d4fcf5e715cd986060c4edce19bbb
