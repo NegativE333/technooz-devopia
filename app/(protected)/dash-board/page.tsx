@@ -61,7 +61,7 @@ const Page: React.FC = async () => {
             ) : (
                 <div className='flex justify-center items-center h-[80vh] pt-16'>
                     <div className='w-[40%] h-full flex justify-center pl-16 text-2xl flex-col gap-4'>
-                        Welcome to Finance wisely
+                        Welcome to Wealth Wise !!!
                         <p>
                             Fill up this form to get started
                         </p>

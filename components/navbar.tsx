@@ -17,10 +17,10 @@ export const Navbar = async () => {
             <Link href="/"> 
                 <Image
                     unoptimized
-                    src="/MoneyCare.png"
+                    src="/Moneylogo.png"
                     alt="logo"
-                    height={100}
-                    width={110}
+                    height={140}
+                    width={150}
                 /> 
             </Link>
             {!userId ? (
@@ -38,7 +38,7 @@ export const Navbar = async () => {
                 </div>
             ) : (
                 <div className="w-full flex ml-12">
-                    <div className="lg:flex hidden gap-8 font-semibold">
+                    <div className="lg:flex hidden gap-8 font-semibold text-blue-800">
                         <Link href="/investment" className="text-lg">
                             Investments
                         </Link>
