@@ -53,4 +53,4 @@ export const getMembers = cache(async () => {
     });
 
     return data;
-})
+});

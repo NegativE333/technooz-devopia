@@ -3,6 +3,8 @@ import { getMembers } from '@/db/queries';
 import Link from 'next/link';
 import MemberButton from './add-member-button';
 import { User } from 'lucide-react';
+import { getMemberInvestments } from '@/actions/get-members-investment';
+import { InvestmentsHover } from './investments-hover';
 
 const Members= async () => {
   
@@ -12,15 +14,14 @@ const Members= async () => {
     membersdata
   ] = await Promise.all([
     getMembersdata
-  ]); 
+  ]);
+
+  // const membersInvestments = await getMemberInvestments(getMa)
 
   return (
     <div className="w-full min-w-16 p-4 bg-white border border-gray-400 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
       <div className="flex items-center justify-between mb-4">
         <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Members</h5>
-        {/* <a href="#" className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-          View all
-        </a> */}
         <MemberButton />
       </div>
       <div className="flow-root">
@@ -39,8 +40,10 @@ const Members= async () => {
                    Total Investment: <b>{member.totalInv} ₹</b>
                   </p>
                 </div>
-                <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                  <Link href="">View</Link>
+                <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white cursor-pointer">
+                  <InvestmentsHover name={member.name}>
+                    View
+                  </InvestmentsHover>
                 </div>
               </div>
             </li>

@@ -38,36 +38,36 @@ export const RegisterForm = () => {
                 Registration form
             </h1>
             <form onSubmit={handleSubmit} className="mx-0">
-                        <div className="space-y-4">
-                            <FormInput
-                                label="Age"
-                                id="age"
-                                type="number"
-                            />
-                            <FormInput
-                                label="Gender"
-                                id="gender"
-                                type="text"
-                            />
-                            <FormInput
-                                label="Job type"
-                                id="jobType"
-                                type="text"
-                            />
-                            <FormInput
-                                label="Marital Status"
-                                id="maritalStatus"
-                                type="text"
-                            />
-                            <Separator />
-                            <FormSubmit
-                                isProcessing={pending}
-                                className="w-full"
-                            >
-                                Add
-                            </FormSubmit>
-                        </div>
-                    </form>
+                <div className="space-y-4">
+                    <FormInput
+                        label="Age"
+                        id="age"
+                        type="number"
+                    />
+                    <FormInput
+                        label="Gender"
+                        id="gender"
+                        type="text"
+                    />
+                    <FormInput
+                        label="Job type"
+                        id="jobType"
+                        type="text"
+                    />
+                    <FormInput
+                        label="Marital Status"
+                        id="maritalStatus"
+                        type="text"
+                    />
+                    <Separator />
+                    <FormSubmit
+                        isProcessing={pending}
+                        className="w-full"
+                    >
+                        Add
+                    </FormSubmit>
+                </div>
+            </form>
         </div>
     )
 }
