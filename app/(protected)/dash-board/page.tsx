@@ -52,7 +52,7 @@ const Page: React.FC = async () => {
         <div className='h-full'>
             {userData?.user?.userId ? (
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 p-4 md:p-8">
-                    <div className='grid grid-cols-2 gap-8'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
                         <DashBox title="Investment" totalMoney={userData.user.totalInv === "0" ? 0 : parseInt(userData.user.totalInv)} />
                         <DashBox title="Savings" totalMoney={userData.user.totalSav === "0" ? 0 : parseInt(userData.user.totalSav)} />
                     </div>

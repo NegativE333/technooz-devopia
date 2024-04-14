@@ -41,7 +41,7 @@ const ChartsPage = async () => {
     })
 
     return (
-        <div className="flex h-[90vh] w-full gap-8 items-center justify-center">
+        <div className="flex flex-col lg:flex-row h-[90vh] w-full  gap-12 lg:gap-8 items-center justify-center lg:mt-0 mt-8">
             <BarChart investmentAmount={investmentAmount} />
             <DonughtChart membersName={membersNames} membersInv={membersInvestments} />
         </div>

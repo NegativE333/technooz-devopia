@@ -19,8 +19,11 @@ model User{
   imageUrl String?
   age String
   gender String
+  maritalStatus String
+  jobType String
   totalInv String
   totalSav String
+  profit String @default("0")
 }
 
 model Investment{

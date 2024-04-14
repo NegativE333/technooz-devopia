@@ -19,10 +19,11 @@ export const RegisterForm = () => {
         const formData = new FormData(e.target);
         const age = formData.get("age") as string;
         const gender = formData.get("gender") as string;
-  
+        const jobType = formData.get("jobType") as string;
+        const maritalStatus = formData.get("maritalStatus") as string;
 
         startTransaction(() => {
-            setUserInfo({age, gender})
+            setUserInfo({age, gender, jobType, maritalStatus})
             .then(() => {
                 toast.success("Registered successfully!");
                 
@@ -32,8 +33,8 @@ export const RegisterForm = () => {
     }
 
     return(
-        <div className=''>
-            <h1>
+        <div className='px-8'>
+            <h1 className='mb-4'>
                 Registration form
             </h1>
             <form onSubmit={handleSubmit} className="mx-0">
@@ -46,6 +47,16 @@ export const RegisterForm = () => {
                             <FormInput
                                 label="Gender"
                                 id="gender"
+                                type="text"
+                            />
+                            <FormInput
+                                label="Job type"
+                                id="jobType"
+                                type="text"
+                            />
+                            <FormInput
+                                label="Marital Status"
+                                id="maritalStatus"
                                 type="text"
                             />
                             <Separator />

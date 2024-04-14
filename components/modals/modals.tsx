@@ -1,6 +1,7 @@
 import { AddInvestmentModal } from "./add-investment-modal"
 import { AddMemberModal } from "./add-member-modal"
 import { AddSavingsModal } from "./add-savings-modal"
+import { DeleteInvestmentModal } from "./delete-investment-modal"
 
 export const Modals = () => {
     return(
@@ -8,6 +9,7 @@ export const Modals = () => {
             <AddInvestmentModal />
             <AddSavingsModal />
             <AddMemberModal />
+            <DeleteInvestmentModal />
         </>
     )
 }

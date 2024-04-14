@@ -26,7 +26,7 @@ const DashBox: React.FC<Props> = ({ title, totalMoney }) => {
   }
 
   return (
-    <div className="flex flex-col w-full p-6 bg-white border border-gray-400 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-64">
+    <div className="flex flex-col w-full p-6 bg-white border border-gray-400 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 h-fit">
       <div className='flex items-center justify-center gap-4 mb-4 relative'>
         {Icon}
         <h5 className="text-2xl font-semibold tracking-tight text-center text-gray-900 dark:text-white">{title}</h5>

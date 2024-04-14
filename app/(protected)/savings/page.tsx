@@ -20,7 +20,7 @@ const SavingsPage = async () => {
         <div>
          <div className="mb-4 flex gap-x-5 justify-center mt-5">
            <h2 className="text-2xl font-semibold mb-2">Total Family Savings:</h2>
-           <p className="text-2xl font-bold text-blue-500">{userInfo?.user?.totalSav}</p>
+           <p className="text-2xl font-bold text-blue-500">{userInfo?.user?.totalSav} ₹</p>
          </div>
          <div className="mb-4 flex justify-center">
            <button  

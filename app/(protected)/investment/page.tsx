@@ -29,7 +29,7 @@ const Page = async () => {
     <div> 
       <div className="mb-4 flex gap-x-5 justify-center mt-5">
         <h2 className="text-2xl font-semibold mb-2">Total Family Investment:</h2>
-        <p className="text-2xl font-bold text-blue-500">{userInfo?.user?.totalInv}</p>
+        <p className="text-2xl font-bold text-blue-500">{userInfo?.user?.totalInv} ₹</p>
       </div>
       <div className="mb-4 flex justify-center">
         <AddButton />

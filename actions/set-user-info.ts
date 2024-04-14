@@ -8,11 +8,15 @@ import { addMember } from './add-members';
 type Props = {
     age: string;
     gender: string;
+    jobType: string;
+    maritalStatus: string;
 }
 
 export const setUserInfo = async ({
     age,
-    gender
+    gender,
+    jobType,
+    maritalStatus
 }: Props) => {
 
 
@@ -28,6 +32,8 @@ export const setUserInfo = async ({
             imageUrl: user.imageUrl,
             age: age,
             gender: gender,
+            jobType,
+            maritalStatus,
             totalInv: "0",
             totalSav: "0"
         }

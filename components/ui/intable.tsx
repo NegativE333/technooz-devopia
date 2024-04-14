@@ -3,6 +3,7 @@ import React from 'react';
 import { deleteInvestment } from '@/actions/delete-investment'; 
 import { Investment } from '@prisma/client';
 import { Trash } from 'lucide-react';
+import DeleteButton from '../add-delete-button';
 
 interface Entry {
     id:string;
@@ -63,9 +64,7 @@ const Table: React.FC<TableProps> = ({ investmentsData }) => {
                                 <td className="px-6 py-4">{entry.createdAt.toDateString()}</td>
                                 <td className="px-6 py-4">{entry.familyMemberName}</td>
                                 <td className="px-6 py-4 text-right">
-                                    <button className="font-medium text-blue-600 dark:text-blue-500 hover:underline" id={entry.id} onClick={handleDelete}>
-                                        <Trash className='h-5 w-5 text-red-500'/>
-                                    </button>
+                                    <DeleteButton id={entry.id}/>
                                 </td>
                             </tr>
                         ))}
