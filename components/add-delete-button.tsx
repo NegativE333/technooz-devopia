@@ -1,8 +1,5 @@
 'use client'
 import React from 'react'
-import { Button } from './ui/button'
-import { Plus } from 'lucide-react'
-import { useSetMemberModal } from '@/store/use-member-modal'
 import { Trash } from 'lucide-react'
 import { useDeleteInvestmentModal } from '@/store/use-delete-investment-modal'
 

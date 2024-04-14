@@ -24,10 +24,11 @@ interface TableProps {
 // Table component
 const Table: React.FC<TableProps> = ({ investmentsData }) => {
 
-    const handleDelete = (e:any)=>{
-        e.preventDefault();
-        deleteInvestment({id:e.target.id})
-    }
+    // const handleDelete = (e:any)=>{
+    //     e.preventDefault();
+    //     const id = e.target.id as string;
+    //     deleteInvestment({id})
+    // }
     return (
         <div> 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg m-2 mx-64">
