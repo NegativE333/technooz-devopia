@@ -6,7 +6,11 @@ import { useSetMemberModal } from '@/store/use-member-modal'
 import { Trash } from 'lucide-react'
 import { useDeleteInvestmentModal } from '@/store/use-delete-investment-modal'
 
-const DeleteButton = ({id}) => {
+type Props = {
+  id: string
+}
+
+const DeleteButton = ({id} : Props) => {
   const { open } = useDeleteInvestmentModal();
   return (
     <div>
